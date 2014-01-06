@@ -1,0 +1,26 @@
+<%= content_for :title, "Login" %>
+<div class="form_container">
+  <h1>
+    Login
+  </h1>
+  <p>
+    Enter your email address and password.
+  </p>
+  <%= form_for(:session, url: sessions_path, :class => "login_form") do |f| %>
+    <%= f.label :email, "Email" %>
+    <br/>
+    <%= f.text_field :email %>
+    <br/>
+    <br/>
+    <%= f.label :password, "Password" %>
+    <br/>
+    <%= f.password_field :password %>
+    <br/>
+    <br/>
+    <%= f.submit("Submit") %>
+  <% end %>
+  <p>
+    New User?
+    <%= link_to "Sign Up Now!", new_users_path %>
+  </p>
+</div>

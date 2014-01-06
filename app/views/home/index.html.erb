@@ -1,0 +1,16 @@
+<%= content_for :title, "FoodForest" %>
+<div class="container">
+  <a href="/signup">Sign Up</a>
+  <a href="/login">Log In</a>
+</div>
+
+<section class="home_container">
+  <%= form_tag('/search', :method => 'get') do %>
+    <%= text_field_tag :location, nil, :id => 'typing_text', :autocomplete => 'off' %>
+  <% end %>
+</section>
+<script>
+  $(document).ready(function() {
+    typingText();
+  });
+</script>

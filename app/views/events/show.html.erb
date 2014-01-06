@@ -1,0 +1,139 @@
+<h1 class="forest-title">Ye Ol' Hipster Forest</h1>
+
+<div class="row">
+<div class="large-4 columns">
+  <a href="#" class="large button round" data-reveal-id="contribute_modal">Contribute to the Party!</a>
+  <div class="news-feed">
+    <div class="news-item">
+      <img class="image" src="http://www.gravatar.com/avatar/b64488fa3db5b2d472e1bc7e23325a30?s=40">
+      <div class="feed-text">Cole just pitched in drinks!</div>
+    </div>
+    <div class="news-item">
+      <img class="image" src="http://www.gravatar.com/avatar/a39c3c996a65e17a19ec29c36914a313?s=40">
+      <div class="feed-text">Jeremy is offering a party space!</div>
+    </div>
+    <div class="news-item">
+      <img class="image" src="http://www.gravatar.com/avatar/b64488fa3db5b2d472e1bc7e23325a30?s=40">
+      <div class="feed-text">Cole just threw down 20 on Skyler's party!</div>
+    </div>
+    <div class="news-item">
+      <img class="image" src="http://www.gravatar.com/avatar/a39c3c996a65e17a19ec29c36914a313?s=40">
+      <div class="feed-text">Jeremy has a sound system available!</div>
+    </div>
+    <div class="news-item">
+      <img class="image" src="http://www.gravatar.com/avatar/a39c3c996a65e17a19ec29c36914a313?s=40">
+      <div class="feed-text">Skyler just brought platers!</div>
+    </div>
+    <div class="news-item">
+      <img class="image" src="http://www.gravatar.com/avatar/b64488fa3db5b2d472e1bc7e23325a30?s=40">
+      <div class="feed-text">Cole just harvested 10 lbs. of tomatoes!</div>
+    </div>
+    <div class="news-item">
+      <img class="image" src="http://www.gravatar.com/avatar/a39c3c996a65e17a19ec29c36914a313?s=40">
+      <div class="feed-text">Jeremy is offering his party space!</div>
+    </div>
+    <div class="news-item">
+      <img class="image" src="http://www.gravatar.com/avatar/b64488fa3db5b2d472e1bc7e23325a30?s=40">
+      <div class="feed-text">Cole just brought 10 people Skyler's party!</div>
+    </div>
+    <div class="news-item">
+      <img class="image" src="http://www.gravatar.com/avatar/a39c3c996a65e17a19ec29c36914a313?s=40">
+      <div class="feed-text">Jeremy has 50 a space available!</div>
+    </div>
+    <div class="news-item">
+      <img class="image" src="http://www.gravatar.com/avatar/a39c3c996a65e17a19ec29c36914a313?s=40">
+      <div class="feed-text">Jeremy just brought dip!</div>
+    </div>
+  </div>
+</div>
+
+<div class="large-8 columns">
+<div class="dirty">
+<h1 class="dirty-title">Get Dirty!</h1>
+<div class="panel task"><div>Cole's garden needs watering on weekends.</div>
+  <div class="avatar">
+    <img class="image" src="http://www.gravatar.com/avatar/b64488fa3db5b2d472e1bc7e23325a30?s=40">
+    <img class="image" src="http://www.gravatar.com/avatar/a39c3c996a65e17a19ec29c36914a313?s=40">
+  </div>
+</div>
+<div class="panel unfulfilled task"><div>Bob's tomatoes need to be harvested this week.</div>
+</div>
+<div class="panel task">Jeremy's garden needs compost to be delivered.
+  <div class="avatar">
+    <img class="image" src="http://www.gravatar.com/avatar/b64488fa3db5b2d472e1bc7e23325a30?s=40">
+  </div>
+</div>
+<div class="panel unfulfilled task"><div>Susie's garden needs watering on Wednesdays.</div>
+</div>
+<div class="panel unfulfilled task"><div>Odin's garden needs weeds pulled this weekend.</div>
+</div>
+<div class="panel task"><div>Molly's garden needs watering on Tuesday.</div>
+  <div class="avatar">
+    <img class="image" src="http://www.gravatar.com/avatar/a39c3c996a65e17a19ec29c36914a313?s=40">
+  </div>
+</div>
+
+<div class="panel unfulfilled task"><div>John's garden needs watering every Friday.</div>
+</div>
+<div class="panel unfulfilled task"><div>Monty's garden has corn available to harvest.</div>
+</div>
+<div class="panel unfulfilled task"><div>Batkid has 10 lbs. of oranges to be picked up.</div>
+</div>
+<div class="panel unfulfilled task"><div>John's garden needs watering every Tuesday.</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+
+<script>
+  $(document).ready(function() {
+    farmEventListener.greenToggle();
+  });
+</script>
+
+
+<style>
+  .amount_text_fields {
+    width: 100px !important;
+    display: inline !important;
+  }
+
+  .modal_lables {
+    display: inline !important;
+  }
+</style>
+
+<div id="contribute_modal" class="reveal-modal">
+  <a class="close-reveal-modal">&#215;</a>
+  <h2>What would you like to contribute?</h2>
+  <%= form_tag('/blah', :id => 'contribute_form') do %>
+      <%= check_box_tag 'land', 'land', nil %>
+      I have land
+      <%= text_field_tag 'land_amount', nil, :class => 'amount_text_fields' %>
+      <%= label_tag 'land_amount', 'sqft', :class => 'modal_lables' %>
+
+      <br>
+
+      <%= check_box_tag 'seeds', 'seeds', nil %>
+      I have seeds
+      <%= text_field_tag 'seed_amount', nil, :class => 'amount_text_fields' %>
+      <%= label_tag 'seed_amount', 'amount', :class => 'modal_lables' %>
+
+      <br>
+
+      <%= check_box_tag 'compost', 'compost', nil %>
+      I have compost
+      <%= text_field_tag 'compost_amount', nil, :class => 'amount_text_fields' %>
+      <%= label_tag 'compost_amount', 'lbs', :class => 'modal_lables' %>
+
+      <br>
+
+      <%= submit_tag 'Contribute', :class => 'button' %>
+    <% end %>
+</div>
+
+
